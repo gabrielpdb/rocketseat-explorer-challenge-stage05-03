@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-color: #fff;
+  --text-color: #323238;
+  --primary-color: #02799d;
+  --secondary-color: #e1e1e6;
+
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+
+  background: var(--bg-color);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  min-height: 100vh;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+}
+
+#timer span {
+  font-size: clamp(1.2rem, 1.2rem + 20vw, 12.6rem);
+  font-weight: 500;
+  line-height: 14.8rem;
+  text-transform: uppercase;
+}
+
+#controls {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#controls button {
+  width: 20%;
+}
+
+#controls button img {
+  width: 100%;
+}
+
+aside {
+  width: clamp(10rem, 16rem + 12vw, 32rem);
+  height: clamp(10rem, 16rem + 12vw, 32rem);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8%;
+}
+
+aside button {
+  background: var(--secondary-color);
+  width: 100%;
+  height: 100%;
+  border-radius: 2.4rem;
+  transition: background 500ms;
+}
+
+aside button img {
+  width: 32%;
+}
+
+aside button.active {
+  background: var(--primary-color);
+}
+
+aside button.active img {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(358deg)
+    brightness(102%) contrast(101%);
+}
+
+@media (max-width: 600px) {
+  body {
+    flex-direction: column;
+  }
+}
