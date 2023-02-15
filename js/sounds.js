@@ -27,7 +27,9 @@ export default function () {
 
   function stopAllSounds() {
     for (const sound in sounds) {
-      sounds[sound].pause()
+      if (!sounds[sound].paused) {
+        sounds[sound].pause()
+      }
     }
   }
 
